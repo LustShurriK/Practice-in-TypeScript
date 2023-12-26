@@ -1,0 +1,16 @@
+function Zadania(x: number): number {
+    const exactValue = Math.log(1 + x); 
+    let approxValue = 0; 
+    const n = 100; 
+
+    for (let i = 1; i <= n; i++) 
+    {
+        approxValue += (Math.pow(-1, i - 1) * Math.pow(x, i)) / i; 
+    }
+
+    return parseFloat(approxValue.toFixed(3)); 
+}
+
+const x = 0.5;
+console.log("Точное значение:", Math.log(1 + x));
+console.log("Вычисленное значение:", Zadania(x));
