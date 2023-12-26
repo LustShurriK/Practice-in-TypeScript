@@ -1,0 +1,16 @@
+function Zadania(x: number, y: number): boolean {
+    const radius = 1; 
+    const centerX = 1.8; 
+    const centerY = 1.8; 
+
+    if ((x - centerX) ** 2 + (y - centerY) ** 2 <= radius ** 2) 
+    {
+        return true; 
+    } 
+    else 
+    {
+        return false; 
+    }
+}
+
+console.log(Zadania(2, 2)); 
