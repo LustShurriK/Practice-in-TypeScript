@@ -1,0 +1,31 @@
+function Zadania(matrixA: number[][], matrixB: number[][]): number[][] | string {
+  const rowsA = matrixA.length;
+  const colsA = matrixA[0].length;
+  const rowsB = matrixB.length;
+  const colsB = matrixB[0].length;
+  const resultat: number[][] = [];
+
+  if (colsA !== rowsB) {
+    return "Количество столбцов в первой матрице должно быть равно количеству строк во второй матрице для умножения.";
+  }
+  for (let i = 0; i < rowsA; i++) {
+    resultat[i] = [];
+    for (let j = 0; j < colsB; j++) {
+      resultat[i][j] = 0;
+      for (let k = 0; k < colsA; k++) {
+        resultat[i][j] += matrixA[i][k] * matrixB[k][j];
+      }
+    }
+  }
+  return resultat;
+}
+
+const matrixA: number[][] = [[1, 2], [3, 4]];
+const matrixB: number[][] = [[5, 6], [7, 8]];
+
+const Reshenie = Zadania(matrixA, matrixB);
+if (typeof Reshenie === "string") {
+  console.log(Reshenie); 
+} else {
+  console.log("Результат умножения: ", Reshenie);
+}
